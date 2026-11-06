@@ -1,6 +1,7 @@
 import QtQuick
 import Quickshell
 import Quickshell.Wayland
+import Quickshell.Hyprland
 import "../services"
 import "../"
 
@@ -22,6 +23,12 @@ PanelWindow {
     readonly property int fh: Theme.notchRadius
     readonly property int popupWidth:  560
     readonly property int popupHeight: 480
+
+    readonly property bool isTargetScreen: {
+        var focused = Hyprland.focusedMonitor
+        if (!focused || !root.screen) return true
+        return focused.name === root.screen.name
+    }
 
     color:   "transparent"
     visible: windowVisible

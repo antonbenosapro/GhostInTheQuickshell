@@ -36,9 +36,9 @@ Item {
 
     // Floats center-screen, like WorkspaceHUD — Dashboard pages pulled out
     // into their own strict, keybind-driven overlays.
-    LauncherPopup {}
-    AgentsPopup {}
-    ConfigPopup {}
+    LauncherPopup { screen: root.topBar.screen }
+    AgentsPopup   { screen: root.topBar.screen }
+    ConfigPopup   { screen: root.topBar.screen }
 
     // ── TopBar-anchored popups ───────────────────────────────
 
